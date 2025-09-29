@@ -95,6 +95,27 @@ Optional: set DISCORD_OWNER_ID to DM help on startup
 - /root set <path> to set your workspace root
 - /enhance now and /submit to control Prompt Enhancer behavior
 
+### Chatting in DM (no slash command)
+- You can just type in the DM and the bot will send that text to Auggie.
+- The bot auto-starts a session on your first message if none is running.
+- It streams output by editing a placeholder "Working…" message and posting overflow chunks.
+
+### Changing workspace root at runtime
+- Use `/root set <path>` to change the working directory.
+- The bot restarts the Auggie PTY with the new root and resumes streaming.
+
+## Developer: test the stream filter
+Use the local tool to compare raw vs filtered Auggie frames while interacting:
+```
+npm run dev:filter -- [optional auggie args]
+# examples:
+# npm run dev:filter -- --version
+# npm run dev:filter -- --workspace-root "C:\\path\\to\\project"
+```
+- Console shows two sections per tick: RAW (ANSI stripped) and FILTERED
+- Also writes to data/filter-test/raw.txt and data/filter-test/filtered.txt
+- Press Ctrl+C to exit
+
 ## Quick start (alternative using package scripts)
 ```
 # After setting env vars in the same PowerShell session

@@ -1,0 +1,35 @@
+{
+  "name": "auggie-discord",
+  "version": "1.0.0",
+  "description": "This bot runs Auggie in a PTY per DM, supports Prompt Enhancer (Ctrl+P), and streams output to Discord.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "nodemon --watch src --ext ts --exec node -r ts-node/register src/index.ts",
+    "build": "tsc -p .",
+    "start": "node dist/index.js",
+    "register:global": "ts-node src/commands/register.ts",
+    "register:guild": "ts-node src/commands/register.ts --guild",
+    "dev:filter": "ts-node src/dev/filterTest.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@homebridge/node-pty-prebuilt-multiarch": "^0.13.1",
+    "discord.js": "^14.22.1",
+    "keytar": "^7.9.0",
+    "strip-ansi": "^7.1.2",
+    "yargs": "^18.0.0",
+    "zod": "^4.1.11"
+  },
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}
