@@ -2,6 +2,8 @@
 
 This bot runs Auggie in a PTY per DM, supports Prompt Enhancer (Ctrl+P), and streams output to Discord.
 
+![Auggie Discord Bot Screenshot](screenshot1.png)
+
 ## Install Auggie CLI
 Requirements:
 - Node.js 22+ installed (check with `node -v`)
